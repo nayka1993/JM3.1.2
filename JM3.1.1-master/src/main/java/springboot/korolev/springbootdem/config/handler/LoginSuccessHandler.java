@@ -1,4 +1,4 @@
-package springboot.korolev.springbootdem.handler;
+package springboot.korolev.springbootdem.config.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -16,7 +16,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException {
         Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
-        if (roles.contains("ADMIN")) {
+        if (roles.contains("ADMIN") || roles.contains("ADMIN,USER")) {
             httpServletResponse.sendRedirect("/admin");
         } else
 
