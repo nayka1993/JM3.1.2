@@ -81,12 +81,12 @@
                                             </thead>
                                             <tbody>
                                             <tr th:each="user : ${listUser}">
-                                                <th th:text="${user.id}">
-                                                <th th:text="${user.name}">
-                                                <th th:text="${user.lastName}">
-                                                <th th:text="${user.age}">
-                                                <th th:text="${user.login}">
-                                                <th th:text="${user.roles}">
+                                                <td th:text="${user.id}"></td>
+                                                <td th:text="${user.name}"></td>
+                                                <td th:text="${user.lastName}"></td>
+                                                <td th:text="${user.age}"></td>
+                                                <td th:text="${user.login}"></td>
+                                                <td th:text="${user.roles}"></td>
 
                                                 <td><a class="nav-link" data-toggle="modal" data-target="#myEdit">
                                                     <button class="btn btn-info">Edit</button>
